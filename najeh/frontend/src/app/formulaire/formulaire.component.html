@@ -1,0 +1,449 @@
+<!-- registeruser.component.html -->
+<nav class="bg-gray-800 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="text-white text-2xl font-bold">
+      <a>Brand</a>
+    </div>
+    <div class="hidden lg:flex space-x-4">
+      <a
+        (click)="logout()"
+        href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+        >Log out</a
+      >
+    </div>
+    <div class="lg:hidden flex items-center">
+      <button
+        id="nav-toggle"
+        class="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+      >
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="nav-content" class="hidden lg:hidden">
+    <a
+      (click)="logout()"
+      href="#"
+      class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      >Log out</a
+    >
+  </div>
+</nav>
+<div
+  class="bg-gray-700 h-auto w-full flex sm:flex-row flex-col-reverse justify-center"
+>
+  <div class="sm:w-1/2 p-4">
+    <div class="bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="user.name"
+          name="name"
+          required
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+          for="lastname"
+        >
+          Last Name
+        </label>
+        <input
+          type="text"
+          id="lastname"
+          [(ngModel)]="user.lastname"
+          name="lastname"
+          required
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+          for="phone"
+        >
+          Phone number
+        </label>
+        <input
+          type="number"
+          id="phone"
+          [(ngModel)]="user.phone"
+          name="phone"
+          required
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div class="flex flex-row flex-wrap gap-10">
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
+          <!-- Monday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Monday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Monday"
+                  type="radio"
+                  [value]="'s1'"
+                  name="Monday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Monday"
+                  type="radio"
+                  [value]="'s2'"
+                  name="Monday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Monday"
+                  type="radio"
+                  [value]="'s3'"
+                  name="Monday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tuesday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Tuesday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s1'"
+                  name="Tuesday"
+                  [(ngModel)]="user.Tuesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s2'"
+                  name="Tuesday"
+                  [(ngModel)]="user.Tuesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s3'"
+                  name="Tuesday"
+                  [(ngModel)]="user.Tuesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Wednesday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Wednesday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s1'"
+                  name="Wednesday"
+                  [(ngModel)]="user.Wednesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s2'"
+                  name="Wednesday"
+                  [(ngModel)]="user.Wednesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s3'"
+                  name="Wednesday"
+                  [(ngModel)]="user.Wednesday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Thursday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Thursday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s1'"
+                  name="Thursday"
+                  [(ngModel)]="user.Thursday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s2'"
+                  name="Thursday"
+                  [(ngModel)]="user.Thursday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s3'"
+                  name="Thursday"
+                  [(ngModel)]="user.Thursday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Friday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Friday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s1'"
+                  name="Friday"
+                  [(ngModel)]="user.Friday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s2'"
+                  name="Friday"
+                  [(ngModel)]="user.Friday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s3'"
+                  name="Friday"
+                  [(ngModel)]="user.Friday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Saturday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Saturday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Saturday"
+                  type="radio"
+                  [value]="'s1'"
+                  name="Saturday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Saturday"
+                  type="radio"
+                  [value]="'s2'"
+                  name="Saturday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  [(ngModel)]="user.Saturday"
+                  type="radio"
+                  [value]="'s3'"
+                  name="Saturday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Sunday -->
+          <div class="mb-4 border border-gray-200 p-4 rounded-md">
+            <label
+              class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            >
+              Sunday
+            </label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s1'"
+                  name="Sunday"
+                  [(ngModel)]="user.Sunday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s1</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s2'"
+                  name="Sunday"
+                  [(ngModel)]="user.Sunday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s2</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  [value]="'s3'"
+                  name="Sunday"
+                  [(ngModel)]="user.Sunday"
+                  class="form-radio dark:bg-gray-700 dark:border-gray-600"
+                />
+                <span class="ml-2 text-gray-700 dark:text-gray-300">s3</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 w-full">
+          <label
+            class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+            for="message"
+          >
+            Message
+          </label>
+          <textarea
+            [(ngModel)]="user.message"
+            name=""
+            id=""
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <button
+          (click)="registerForm()"
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- //caption part -->
+  <div class="bg-transparent sm:w-96 h-auto p-4">
+    <div class="bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-gray-700">
+      <p class="text-red-500 font-semibold text-2xl mb-2">Caption !</p>
+      <p>
+        <span class="text-red-500 font-semibold">Name ? </span> Lorem ipsum
+        dolor sit amet
+      </p>
+      <p>
+        <span class="text-red-500 font-semibold">Lastname ?</span> : Lorem ipsum
+        dolor sit amet
+      </p>
+      <ul>
+        <li>
+          <span class="text-red-500 font-semibold">S1 </span>: Lorem ipsum dolor
+          sit amet.
+        </li>
+        <li>
+          <span class="text-red-500 font-semibold">S2 </span>: Lorem ipsum dolor
+          sit amet.
+        </li>
+        <li>
+          <span class="text-red-500 font-semibold">S3 </span>: Lorem ipsum dolor
+          sit amet.
+        </li>
+      </ul>
+      <p>
+        <span class="text-red-500 font-semibold"> how it works ? </span> Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi
+        vero odio quas alias debitis.
+      </p>
+    </div>
+  </div>
+</div>
